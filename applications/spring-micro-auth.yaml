@@ -3,12 +3,14 @@ kind: Application
 metadata:
   name: spring-micro-auth
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: spring-micro-auth
   source:
     repoURL: https://github.com/coolexplorer/spring-micro-argocd.git
-    targetRevision: HEAD
-    path: spring-micro-auth
+    targetRevision: main
+    chart: spring-micro-auth
   destination:
     server: https://kubernetes.default.svc
     namespace: default
