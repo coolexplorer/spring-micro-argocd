@@ -6,11 +6,11 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: spring-micro-auth
+  project: default
   source:
     repoURL: https://github.com/coolexplorer/spring-micro-argocd.git
     targetRevision: main
-    chart: spring-micro-auth
+    path: spring-micro-auth
   destination:
     server: https://kubernetes.default.svc
     namespace: default
