@@ -8,10 +8,12 @@ For that, GitOps is suitable environment for this.
 
 ## Microservice Architecture
 This is my basic architecture of microsevice architecture and now this is evolving. This means that this architecture is changing. 
+
 ![spring-micro-architecture](./images/microservice-architecture.png)
 
 ## Deployment
 The deployment for this project is set up by Jenkins and Github Action. You can easily understand how these work. 
+
 ![spring-micro-deployment](./images/spring-micro-deployment.png)
 
 
