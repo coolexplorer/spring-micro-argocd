@@ -4,7 +4,7 @@ metadata:
   name: spring-micro-session
   namespace: default
   finalizers:
-    - resource-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
