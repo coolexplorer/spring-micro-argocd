@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-micro-session
+  namespace: argocd
+  finalizers:
+    - resource-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoUrl: https://github.com/coolexplorer/spring-micro-argocd.git
+    targetRevision: main
+    path: spring-micro-session
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
