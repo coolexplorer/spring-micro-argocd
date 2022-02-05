@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoUrl: https://github.com/coolexplorer/spring-micro-argocd.git
+    repoURL: https://github.com/coolexplorer/spring-micro-argocd.git
     targetRevision: main
     path: spring-micro-session
   destination:
