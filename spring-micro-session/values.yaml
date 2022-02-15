@@ -24,6 +24,13 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+config:
+  SERVER_PORT: 8080
+  REDIS_HOST: localhost
+  REDIS_PORT: 6379
+  KAFKA_BOOTSTRAP_ADDRESSES: "localhost:29092"
+  LOGGING_LEVEL_IO_COOLEXPLORER: DEBUG
+
 podAnnotations: {}
 
 podSecurityContext: {}

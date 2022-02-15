@@ -15,6 +15,13 @@ imagePullSecrets:
 nameOverride: ""
 fullnameOverride: ""
 
+config:
+  SERVER_PORT: 8080
+  REDIS_HOST: localhost
+  REDIS_PORT: 6379
+  KAFKA_BOOTSTRAP_ADDRESSES: "localhost:29092"
+  LOGGING_LEVEL_IO_COOLEXPLORER: DEBUG
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
