@@ -25,10 +25,10 @@ serviceAccount:
   name: ""
 
 config:
-  SERVER_PORT: 8080
-  REDIS_HOST: localhost
+  SERVER_PORT: 80
+  REDIS_HOST: redis-headless.default.svc.cluster.local
   REDIS_PORT: 6379
-  KAFKA_BOOTSTRAP_ADDRESSES: "localhost:29092"
+  KAFKA_BOOTSTRAP_ADDRESSES: "kafka.default.svc.cluster.local:9092"
   LOGGING_LEVEL_IO_COOLEXPLORER: DEBUG
 
 podAnnotations: {}
