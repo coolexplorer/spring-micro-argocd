@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "spring-micro-session.fullname" . }}
+  name: {{ include "spring-micro-gateway.fullname" . }}
   labels:
-    {{- include "spring-micro-session.labels" . | nindent 4 }}
+    {{- include "spring-micro-gateway.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "spring-micro-session.selectorLabels" . | nindent 6 }}
+      {{- include "spring-micro-gateway.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "spring-micro-session.selectorLabels" . | nindent 8 }}
+        {{- include "spring-micro-gateway.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "spring-micro-session.serviceAccountName" . }}
+      serviceAccountName: {{ include "spring-micro-gateway.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           envFrom:
             - configMapRef:
-                name: {{ include "spring-micro-session.fullname" . }}-config
+                name: {{ include "spring-micro-gateway.fullname" . }}-config
           livenessProbe:
             httpGet:
               path: /health
